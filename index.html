@@ -2,6 +2,10 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
+
+<!-- FIX RESPONSIVE -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>DHANZX PANEL</title>
 
 <style>
@@ -16,8 +20,8 @@ body {
 /* HEADER */
 .header {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 15px;
+    left: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -34,19 +38,15 @@ body {
     font-size: 22px;
     font-weight: bold;
     color: #fff;
-
-    /* GLOW KUAT */
     text-shadow:
         0 0 5px #ff00ff,
         0 0 10px #ff00ff,
         0 0 20px #ff00ff,
         0 0 40px #cc00ff,
         0 0 80px #9900ff;
-
     animation: neon 1.5s ease-in-out infinite alternate;
 }
 
-/* ANIMASI NYALA JELAS */
 @keyframes neon {
     from {
         text-shadow:
@@ -69,13 +69,13 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 120px;
-    z-index: 2;
     position: relative;
 }
 
 /* BOX UTAMA */
 .box {
-    width: 340px;
+    width: 90%;
+    max-width: 340px;
     padding: 20px;
     border-radius: 20px;
     background: linear-gradient(145deg, black, #1a001f);
@@ -83,7 +83,7 @@ body {
     box-shadow: 0 0 25px #ff00ff;
 }
 
-/* INPUT +62 */
+/* INPUT */
 .input-wrap {
     display: flex;
     align-items: center;
@@ -134,9 +134,10 @@ button:hover {
     box-shadow: 0 0 20px #ff66ff;
 }
 
-/* BOX BAWAH */
+/* FOOTER BOX */
 .footer-box {
-    width: 340px;
+    width: 90%;
+    max-width: 340px;
     margin-top: 20px;
     padding: 12px;
     border-radius: 15px;
@@ -146,7 +147,7 @@ button:hover {
     box-shadow: 0 0 20px #ff00ff;
 }
 
-/* BACKGROUND ANIME */
+/* BACKGROUND */
 .anime-bg {
     position: fixed;
     bottom: 0;
@@ -178,7 +179,7 @@ button:hover {
 
         <div class="input-wrap">
             <div class="prefix">+62</div>
-            <input type="tel" placeholder="812xxxxxxx">
+            <input type="tel" placeholder="Masukkan nomor target">
         </div>
 
         <select>
@@ -198,7 +199,7 @@ button:hover {
 
 </div>
 
-<!-- ANIME -->
+<!-- BACKGROUND -->
 <div class="anime-bg"></div>
 
 </body>
