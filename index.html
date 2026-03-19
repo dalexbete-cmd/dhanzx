@@ -12,86 +12,32 @@ body {
     background: radial-gradient(circle, #0a0015, black);
     font-family: Arial, sans-serif;
     color: white;
-    overflow: hidden;
 }
 
-/* HEADER */
 .header {
-    position: fixed;
-    top: 10px;
-    left: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 2;
-}
-
-.logo {
-    width: 25px;
-    height: 25px;
-    fill: #ffcc00;
-}
-
-.title {
-    font-size: 34px; /* 🔥 diperbesar */
+    text-align: center;
+    margin-top: 20px;
+    font-size: 28px;
     font-weight: bold;
-    color: #fff;
-    text-shadow:
-        0 0 5px #ff00ff,
-        0 0 10px #ff00ff,
-        0 0 20px #ff00ff,
-        0 0 40px #cc00ff,
-        0 0 80px #9900ff;
-    animation: neon 1.5s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #cc00ff;
 }
 
-@keyframes neon {
-    from {
-        text-shadow:
-            0 0 5px #ff00ff,
-            0 0 10px #ff00ff,
-            0 0 20px #cc00ff;
-    }
-    to {
-        text-shadow:
-            0 0 10px #ff00ff,
-            0 0 20px #ff00ff,
-            0 0 40px #cc00ff,
-            0 0 80px #9900ff;
-    }
-}
-
-/* CONTAINER (NAIK) */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-    padding-top: 60px; /* 🔥 lebih naik */
-    box-sizing: border-box;
-}
-
-/* BOX */
-.box {
+.panel {
     width: 90%;
-    max-width: 340px;
-    padding: 20px;
-    border-radius: 20px;
-    background: linear-gradient(145deg, black, #1a001f);
+    max-width: 360px;
+    margin: 15px auto;
+    padding: 15px;
     border: 2px solid #ff00ff;
-    box-shadow: 0 0 25px #ff00ff;
-    margin-top: 10px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, black, #1a001f);
+    box-shadow: 0 0 15px #ff00ff;
 }
 
-/* INPUT */
 .input-wrap {
     display: flex;
-    align-items: center;
     border: 1px solid #ff00ff;
-    border-radius: 12px;
-    padding: 10px;
-    margin-bottom: 15px;
+    border-radius: 10px;
+    padding: 8px;
     background: black;
 }
 
@@ -108,97 +54,196 @@ body {
     width: 100%;
 }
 
-/* SELECT */
 select {
     width: 100%;
+    margin-top: 10px;
     padding: 12px;
     border-radius: 12px;
     background: black;
     color: #ff66ff;
     border: 1px solid #ff00ff;
-    margin-bottom: 15px;
 }
 
-/* BUTTON */
 button {
     width: 100%;
+    margin-top: 12px;
     padding: 12px;
-    border-radius: 12px;
-    background: linear-gradient(45deg, #cc00cc, #ff66ff);
+    border-radius: 10px;
     border: none;
+    background: linear-gradient(45deg, #cc00cc, #ff66ff);
     color: white;
     font-weight: bold;
     cursor: pointer;
 }
 
-button:hover {
-    box-shadow: 0 0 20px #ff66ff;
-}
-
-/* FOOTER */
-.footer-box {
+.line {
     width: 90%;
-    max-width: 340px;
-    margin-top: 20px;
-    padding: 12px;
-    border-radius: 15px;
-    border: 2px solid #ff00ff;
-    text-align: center;
-    color: #ff66ff;
-    box-shadow: 0 0 20px #ff00ff;
+    max-width: 360px;
+    height: 1px;
+    background: #ff00ff;
+    margin: 10px auto;
 }
 
-/* BACKGROUND */
-.anime-bg {
+/* POPUP */
+.popup {
     position: fixed;
-    bottom: 0;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 320px;
-    background: url("anime.png") no-repeat center bottom;
-    background-size: contain;
-    opacity: 0.15;
-    filter: brightness(0.7) contrast(1.2) drop-shadow(0 0 15px purple);
-    z-index: 1;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-box {
+    width: 80%;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid red;
+    text-align: center;
+    background: linear-gradient(145deg, black, #1a0000);
+    box-shadow: 0 0 25px red;
+}
+
+/* SPINNER */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ff6666;
+    border-top: 4px solid red;
+    border-radius: 50%;
+    margin: 10px auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* GLITCH */
+.glitch {
+    animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, -1px); }
+    80% { transform: translate(2px, 1px); }
+    100% { transform: translate(0); }
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-    <svg class="logo" viewBox="0 0 24 24">
-        <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/>
-    </svg>
-    <div class="title">DHANZX BUG</div>
-</div>
+<div class="header">DHANZX BUG ⚡</div>
 
-<div class="container">
-
-    <div class="box">
-
-        <div class="input-wrap">
-            <div class="prefix">+62</div>
-            <input type="tel" placeholder="Masukkan nomor target">
-        </div>
-
-        <select>
-            <option>⚡ Pilih Mode ⚡</option>
-            <option>Crash</option>
-            <option>Auto Crash</option>
-            <option>Extreme Crash</option>
-        </select>
-
-        <button>Kirim</button>
-
+<div class="panel">
+    <div class="input-wrap">
+        <div class="prefix">+62</div>
+        <input type="tel" placeholder="Masukkan nomor">
     </div>
 
-    <div class="footer-box">
-        BUG WA CRASH
-    </div>
+    <select>
+        <option>Crash Biasa</option>
+        <option>Crash Lag</option>
+        <option>Crash Lag Parah</option>
+    </select>
 
+    <button onclick="showPopup()">KIRIM CRASH</button>
 </div>
 
-<div class="anime-bg"></div>
+<div class="line"></div>
+
+<div class="panel">
+    <div class="input-wrap">
+        <div class="prefix">+62</div>
+        <input type="tel" placeholder="Masukkan nomor">
+    </div>
+
+    <select>
+        <option>Blokir 1 Hari</option>
+        <option>Blokir 1 Minggu</option>
+        <option>Blokir 1 Bulan</option>
+        <option>Blokir Permanen</option>
+    </select>
+
+    <button onclick="showPopup()">KIRIM BLOKIR</button>
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+    <div class="popup-box" id="popupBox">
+
+        <div id="popupTitle">⚠️ PROSES DIMUAT ⚠️</div>
+
+        <div class="spinner" id="spinner"></div>
+
+        <div id="popupText">Sedang memproses...</div>
+
+        <button id="popupBtn" onclick="closePopup()" style="display:none;">Tutup</button>
+
+    </div>
+</div>
+
+<script>
+function showPopup() {
+    const popup = document.getElementById("popup");
+    const title = document.getElementById("popupTitle");
+    const text = document.getElementById("popupText");
+    const btn = document.getElementById("popupBtn");
+    const spinner = document.getElementById("spinner");
+    const box = document.getElementById("popupBox");
+
+    popup.style.display = "flex";
+
+    // reset UI
+    spinner.style.display = "block";
+    box.classList.remove("glitch");
+    btn.style.display = "none";
+
+    title.innerText = "⚠️ PROSES DIMUAT ⚠️";
+    text.innerText = "Sedang memproses...";
+
+    // suara beep
+    let audio = new Audio("https://actions.google.com/sounds/v1/alarms/beep_short.ogg");
+    audio.play();
+
+    // vibrate HP
+    if (navigator.vibrate) {
+        navigator.vibrate(200);
+    }
+
+    setTimeout(() => {
+        spinner.style.display = "none";
+
+        title.innerText = "✅ KIRIM BERHASIL";
+        text.innerText = "Proses selesai dengan sukses";
+
+        // glitch effect
+        box.classList.add("glitch");
+
+        // vibrate lagi
+        if (navigator.vibrate) {
+            navigator.vibrate([100, 100, 100]);
+        }
+
+        btn.style.display = "inline-block";
+
+    }, 2000);
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
 
 </body>
 </html>
