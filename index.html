@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>DHANZX PANEL</title>
+
+<style>
+body {
+    margin: 0;
+    background: radial-gradient(circle, #0a0015, black);
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+}
+
+.logo {
+    width: 25px;
+    height: 25px;
+    fill: #ffcc00;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+
+    /* GLOW KUAT */
+    text-shadow:
+        0 0 5px #ff00ff,
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff,
+        0 0 40px #cc00ff,
+        0 0 80px #9900ff;
+
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+/* ANIMASI NYALA JELAS */
+@keyframes neon {
+    from {
+        text-shadow:
+            0 0 5px #ff00ff,
+            0 0 10px #ff00ff,
+            0 0 20px #cc00ff;
+    }
+    to {
+        text-shadow:
+            0 0 10px #ff00ff,
+            0 0 20px #ff00ff,
+            0 0 40px #cc00ff,
+            0 0 80px #9900ff;
+    }
+}
+
+/* CONTAINER */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+    z-index: 2;
+    position: relative;
+}
+
+/* BOX UTAMA */
+.box {
+    width: 340px;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, black, #1a001f);
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 25px #ff00ff;
+}
+
+/* INPUT +62 */
+.input-wrap {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ff00ff;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: black;
+}
+
+.prefix {
+    color: #ff66ff;
+    margin-right: 5px;
+}
+
+.input-wrap input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    width: 100%;
+}
+
+/* SELECT */
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    background: black;
+    color: #ff66ff;
+    border: 1px solid #ff00ff;
+    margin-bottom: 15px;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #cc00cc, #ff66ff);
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 0 0 20px #ff66ff;
+}
+
+/* BOX BAWAH */
+.footer-box {
+    width: 340px;
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 15px;
+    border: 2px solid #ff00ff;
+    text-align: center;
+    color: #ff66ff;
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+/* BACKGROUND ANIME */
+.anime-bg {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 320px;
+    background: url("anime.png") no-repeat center bottom;
+    background-size: contain;
+    opacity: 0.15;
+    filter: brightness(0.7) contrast(1.2) drop-shadow(0 0 15px purple);
+    z-index: 1;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <svg class="logo" viewBox="0 0 24 24">
+        <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/>
+    </svg>
+    <div class="title">DHANZX BUG</div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <div class="box">
+
+        <div class="input-wrap">
+            <div class="prefix">+62</div>
+            <input type="tel" placeholder="812xxxxxxx">
+        </div>
+
+        <select>
+            <option>⚡ Pilih Mode ⚡</option>
+            <option>Crash</option>
+            <option>Auto Crash</option>
+            <option>Extreme Crash</option>
+        </select>
+
+        <button>Kirim</button>
+
+    </div>
+
+    <div class="footer-box">
+        BUG WA CRASH
+    </div>
+
+</div>
+
+<!-- ANIME -->
+<div class="anime-bg"></div>
+
+</body>
+</html>
