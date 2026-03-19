@@ -33,7 +33,7 @@ body {
 }
 
 .title {
-    font-size: 26px; /* 🔥 diperbesar */
+    font-size: 26px;
     font-weight: bold;
     color: #fff;
     text-shadow:
@@ -61,16 +61,18 @@ body {
     }
 }
 
-/* CONTAINER */
+/* CONTAINER (FIX NAIK) */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 90px; /* 🔥 dinaikkan */
-    position: relative;
+    justify-content: flex-start;
+    height: 100vh;
+    padding-top: 70px;
+    box-sizing: border-box;
 }
 
-/* BOX UTAMA */
+/* BOX */
 .box {
     width: 90%;
     max-width: 340px;
@@ -79,6 +81,7 @@ body {
     background: linear-gradient(145deg, black, #1a001f);
     border: 2px solid #ff00ff;
     box-shadow: 0 0 25px #ff00ff;
+    margin-top: 0;
 }
 
 /* INPUT */
