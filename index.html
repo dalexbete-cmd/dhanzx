@@ -109,7 +109,7 @@ button {
     box-shadow: 0 0 25px red;
 }
 
-/* SPINNER */
+/* spinner */
 .spinner {
     width: 40px;
     height: 40px;
@@ -125,7 +125,7 @@ button {
     to { transform: rotate(360deg); }
 }
 
-/* GLITCH */
+/* glitch */
 .glitch {
     animation: glitch 0.3s infinite;
 }
@@ -195,6 +195,7 @@ button {
 
 <script>
 function showPopup() {
+    const input = document.querySelector("input");
     const popup = document.getElementById("popup");
     const title = document.getElementById("popupTitle");
     const text = document.getElementById("popupText");
@@ -204,7 +205,22 @@ function showPopup() {
 
     popup.style.display = "flex";
 
-    // reset UI
+    // cek kosong
+    if (input.value.trim() === "") {
+        spinner.style.display = "none";
+        box.classList.remove("glitch");
+
+        title.innerText = "⚠️ ERROR ⚠️";
+        text.innerText = "ISI NOMOR TARGET!";
+        btn.style.display = "inline-block";
+
+        if (navigator.vibrate) {
+            navigator.vibrate([200,100,200]);
+        }
+        return;
+    }
+
+    // proses normal
     spinner.style.display = "block";
     box.classList.remove("glitch");
     btn.style.display = "none";
@@ -212,11 +228,9 @@ function showPopup() {
     title.innerText = "⚠️ PROSES DIMUAT ⚠️";
     text.innerText = "Sedang memproses...";
 
-    // suara beep
     let audio = new Audio("https://actions.google.com/sounds/v1/alarms/beep_short.ogg");
     audio.play();
 
-    // vibrate HP
     if (navigator.vibrate) {
         navigator.vibrate(200);
     }
@@ -227,12 +241,10 @@ function showPopup() {
         title.innerText = "✅ KIRIM BERHASIL";
         text.innerText = "Proses selesai dengan sukses";
 
-        // glitch effect
         box.classList.add("glitch");
 
-        // vibrate lagi
         if (navigator.vibrate) {
-            navigator.vibrate([100, 100, 100]);
+            navigator.vibrate([100,100,100]);
         }
 
         btn.style.display = "inline-block";
